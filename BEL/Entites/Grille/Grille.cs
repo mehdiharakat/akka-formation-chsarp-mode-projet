@@ -38,7 +38,7 @@ namespace BEL.Entites.Grille
 
         #region Methodes
         /// <summary>
-        /// Dessiner la grille
+        /// Dessiner la grille 
         /// </summary>
         public void dessiner_grille()
         {

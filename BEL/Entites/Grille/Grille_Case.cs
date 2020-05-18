@@ -14,6 +14,8 @@ namespace BEL.Entites.Grille
 
         public bool _etat_case;
 
+        public Personnage personnage { get; set; }
+
         public bool Etat_case { get => _etat_case; set => _etat_case = value; }
         public int Posx { get => _posx; set => _posx = value; }
         public int Posy { get => _posy; set => _posy = value; }
