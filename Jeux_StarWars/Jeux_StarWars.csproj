@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BEL\EL.csproj" />
-    <ProjectReference Include="..\BLL\LL.csproj" />
+    <ProjectReference Include="..\BEL\BEL.csproj" />
+    <ProjectReference Include="..\BLL\BLL.csproj" />
   </ItemGroup>
 
 </Project>
