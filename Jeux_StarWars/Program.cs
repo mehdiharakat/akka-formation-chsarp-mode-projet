@@ -6,7 +6,7 @@ namespace Jeux_StarWars
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+           
         }
     }
 }
