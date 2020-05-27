@@ -16,6 +16,7 @@ namespace Jeux_StarWars
         static void Main(string[] args)
         {
             // test dessiner grille
+<<<<<<< HEAD
             //Grille grille = new Grille(10,10) ;
             //grille.dessiner_grille();
 
@@ -32,6 +33,10 @@ namespace Jeux_StarWars
             m.DessinerMenuPrincipale(grille);
 
             
+=======
+            Grille grille = new Grille(10,10) ;
+            grille.dessiner_grille();
+>>>>>>> e9a4769a4045ecb7196c7509c709d3c37ab121db
         }
     }
 }
