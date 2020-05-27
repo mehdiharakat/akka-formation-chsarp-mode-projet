@@ -1,6 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using BEL;
 using BEL.Entites.Grille;
+using BLL;
+using DAL;
+using DAL.Entities;
+using Microsoft.EntityFrameworkCore;
+using System.Configuration;
 
 namespace Jeux_StarWars
 {
@@ -9,12 +16,22 @@ namespace Jeux_StarWars
         static void Main(string[] args)
         {
             // test dessiner grille
-<<<<<<< HEAD
+            //Grille grille = new Grille(10,10) ;
+            //grille.dessiner_grille();
 
-=======
->>>>>>> f00d95b11374b17b70f2b270cc1a94ece404522f
-            Grille grille = new Grille(10,10) ;
-            grille.dessiner_grille();
+            // recuperer la partie.
+
+            DAO dao = new DAO();
+            TblGrille partie_grille = dao.RecupererGrillePartie();
+
+            Grille grille = new Grille(partie_grille.Hauteur, partie_grille.Largeur, partie_grille.Nb_Personnages);
+            
+            // afficher le menu pricipale.
+
+            Menus m = new Menus();
+            m.DessinerMenuPrincipale(grille);
+
+            
         }
     }
 }

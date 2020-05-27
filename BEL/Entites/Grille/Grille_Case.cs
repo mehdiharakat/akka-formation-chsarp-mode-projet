@@ -8,16 +8,25 @@ namespace BEL.Entites.Grille
     {
         #region Atributs
 
+        // position X de la case dans la grille.
         public static int _posx = 0;
 
+        // position Y de la case dans la grille.
         public static int _posy = 0;
 
+        // etat de la case vide/remplie.
         public bool _etat_case;
 
+        // le personnage dans la case.
         public Personnage personnage { get; set; }
 
+        // Proprieté de l'etat de la case.
         public bool Etat_case { get => _etat_case; set => _etat_case = value; }
+
+        // Proprieté de la position X de la case dans la grille.
         public int Posx { get => _posx; set => _posx = value; }
+
+        // Proprieté de la position Y de la case dans la grille.
         public int Posy { get => _posy; set => _posy = value; }
 
         #endregion
@@ -29,10 +38,11 @@ namespace BEL.Entites.Grille
         /// <param name="s"></param>
         /// <param name="x"></param>
         /// <param name="y"></param>
-        public static void Dessiner_caractere(string s, int x, int y)
+        public static void DessinerCaractere(string s, int x, int y)
         {
             try
             {
+                Console.OutputEncoding = System.Text.Encoding.Unicode;
                 Console.SetCursorPosition(_posx + x, _posy + y);
                 Console.Write(s);
             }
@@ -46,31 +56,50 @@ namespace BEL.Entites.Grille
         /// <summary>
         /// Dessiner la case de la grille
         /// </summary>
-        public void Dessiner_Case()
+        public void DessinerCase()
         {
 
             // Dessinez le côté gauche, du bas en haut.
-            Dessiner_caractere("+", 0, 0);
-            Dessiner_caractere("|", 0, 1);
-            Dessiner_caractere("|", 0, 2);
-            Dessiner_caractere("+", 0, 3);
+            DessinerCaractere("╬", 0, 0);
+            DessinerCaractere("║", 0, 1);
+            DessinerCaractere("║", 0, 2);
+            DessinerCaractere("╬", 0, 3);
 
             // Dessinez le côté inférieur, de la gauche à la droite.
-            Dessiner_caractere("-", 1, 3);
-            Dessiner_caractere("-", 2, 3);
-            Dessiner_caractere("-", 3, 3);
-            Dessiner_caractere("+", 4, 3);
+            DessinerCaractere("═", 1, 3);
+            DessinerCaractere("═", 2, 3);
+            DessinerCaractere("═", 3, 3);
+            DessinerCaractere("╬", 4, 3);
 
             // Dessinez le côté droit, du bas en haut.
-            Dessiner_caractere("|", 4, 2);
-            Dessiner_caractere("|", 4, 1);
-            Dessiner_caractere("+", 4, 0);
+            DessinerCaractere("║", 4, 2);
+            DessinerCaractere("║", 4, 1);
+            DessinerCaractere("╬", 4, 0);
 
             //  Dessinez le côté supérieur, de la droite à la gauche.
-            Dessiner_caractere("-", 3, 0);
-            Dessiner_caractere("-", 2, 0);
-            Dessiner_caractere("-", 1, 0);
+            DessinerCaractere("═", 3, 0);
+            DessinerCaractere("═", 2, 0);
+            DessinerCaractere("═", 1, 0);
         }
+
+        /// <summary>
+        /// Methode pour dessiner un personnage dans la case de la grille.
+        /// </summary>
+        public void DessinerPersonnage(string Clans)
+        {
+            if(Clans == "Ennemie")
+            {
+                DessinerCaractere("☻", 2, 1);
+                DessinerCaractere("⁞", 2, 2);
+            }
+            else 
+            {
+                DessinerCaractere("\x263A", 2, 1);
+                DessinerCaractere("⁞", 2, 2);
+            }
+
+        }
+
         #endregion
 
     }
